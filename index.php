@@ -37,9 +37,9 @@
                             <ul class="list-group mt-2">
                                 <li class="list-group-item d-flex justify-content-between">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Inserisci task">
+                                        <input type="text" @keyup.enter="updateTasks" v-model="taskItem" class="form-control" placeholder="Inserisci task">
                                     </div>
-                                    <button type="button" class="btn btn-success">
+                                    <button @click='updateTasks' type="button" class="btn btn-success">
                                         <i class="fas fa-plus"></i>
                                         <span>Aggiungi</span>
                                     </button>

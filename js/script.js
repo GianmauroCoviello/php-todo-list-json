@@ -15,4 +15,22 @@ createApp({
         })
 
     },
+    methods: {
+        updateTasks() {
+            const data = {
+                text: this.taskItem,
+                done: this.done
+            }
+
+            axios.post(this.apiUrl, data, {
+                header: ('Content-Type: multipart/form-data')
+
+            }).then((response) => {
+                this.taskItem = ''
+                this.done = ''
+                this.tasks = response.data
+
+            })
+        }
+    },
 }).mount('#app')
