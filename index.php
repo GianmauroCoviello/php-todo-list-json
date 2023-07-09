@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Document</title>
 </head>
     <body>
@@ -18,8 +19,8 @@
                         
                         <div class="card p-4">
                             <ul class="list-group">
-                                <li class="list-group-item d-flex justify-content-between mb-1">
-                                    <h5></h5>
+                                <li v-for="(task, index) in tasks" :key="index" class="list-group-item d-flex justify-content-between mb-1">
+                                    <h5>{{task.text}}</h5>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-primary">
                                             <i class="fa-solid fa-check"></i>
@@ -50,7 +51,6 @@
             </div>
         </div>
 
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
         <script type='text/javascript' src="./js/script.js"></script>
     </body>
